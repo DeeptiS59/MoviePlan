@@ -1,0 +1,32 @@
+<p>movie-list works!</p>
+<button class="btn btn-success btn-lg" routerLink="/admin/addMovie">Add a new movie show</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Name</th>
+            <th>Description</th>
+            <th>Ticket Price</th>
+            <th>Enable/Disable</th>
+            <th>Availability</th>
+            <th>Genre</th>
+                       
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of movielist; let i = index;">
+            
+            <td>{{item.name}} </td> 
+            <td>{{item.description}}</td> 
+            <td>{{item.price}} </td>
+            <td>{{item.enable}}</td>
+            <td>{{item.dateTime}} </td> 
+            <td>{{item.genre && item.genre.name}} </td> 
+            
+           
+            <td><button class="btn btn-primary btn-lg" [routerLink]="['/admin/editMovie',item.id]">Edit Movie Details</button></td>
+            <td><button class="btn btn-danger btn-lg" (click)="deleteMovie(item.id)">Stop showing this movie</button></td>
+            </tr>
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+<p>genre works!</p>
+
+
+<button class="btn btn-success btn-lg" routerLink="/admin/addGenre">Add a new Movie Genre</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+                       
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of genrelist; let i = index;">
+           
+            <td>{{item.name}} </td> 
+           
+            
+            <td><button class="btn btn-danger btn-lg" (click)="deleteGenre(item.id)">Delete Genre</button></td>
+            </tr>
+    </tbody>
+</table>

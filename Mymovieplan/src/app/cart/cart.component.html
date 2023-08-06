@@ -1,0 +1,27 @@
+<p>cart works!</p>
+<button class="btn btn-primary btn-lg" routerLink="/homepage">Back To Homepage</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Show Timings</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cartItems; let i = index;">
+           
+            <td>{{item.id}} </td> 
+            <td>{{item.movie.name}}</td>
+            <td>{{item.movie.description}}</td> 
+            <td>{{item.movie.price}}</td>
+            <td>{{item.movie.dateTime}}</td> 
+
+            <td><button class="btn btn-danger btn-lg" (click)="deleteCartItem(item.id)">Remove from the cart</button></td>
+            </tr>
+    </tbody>
+</table>
+Total Amount={{cartValue}};
+<button class="btn btn-success btn-lg" routerLink="/payment">Make Payment</button>

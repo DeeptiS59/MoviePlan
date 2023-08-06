@@ -1,0 +1,6 @@
+<marquee>Hi Admin! This page adds a genre to categorize movies</marquee>
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+<label>add Genre:</label> <input type="text" value="Create Category" name="Category" [(ngModel)]="genre.name" required><hr>
+<input class="btn btn-success btn-lg" type="Submit" value="Submit">
+<button class="btn btn-warning btn-lg" routerLink="/admin/genre">Updated Genre List</button>
+</form>

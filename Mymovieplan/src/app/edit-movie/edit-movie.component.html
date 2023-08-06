@@ -1,0 +1,20 @@
+<header><hr></header>
+<p>Movie ID being updated: {{movieId}}</p>
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <label>Add new movie:</label>
+    <input type="text"  [(ngModel)]="movie.name" name="name" required><br>
+    <label>Price:</label>
+    <input type="number" value="000" [(ngModel)]="movie.price" name="price" required><br>
+    <label>Enable/Disable movie</label>
+    <input type="checkbox" name="enable" [(ngModel)]="movie.enable">
+    <label>Genre:</label>
+    <select name="category" [(ngModel)]="movie.genre.id" required>
+        <option *ngFor="let item of genrelist; let i = index;" [ngValue]="item.id">{{item.name}}</option>
+    
+    </select><hr>
+    <input type="datetime-local" name="dateTime" required [(ngModel)]="movie.dateTime"><br>
+    <label>Enter Movie Description:</label>
+    <textarea  name="JSON" [ariaValueMax]="50" cols="50" rows="5" [(ngModel)]="movie.description"></textarea><hr>
+    <input class="btn btn-success btn-lg" type="Submit">
+    <input class="btn btn-primary btn-lg" type="reset">
+    </form>

@@ -1,0 +1,25 @@
+<p>order-success works!</p>
+<b><i>Here is your booking summary:</i></b>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>Name</th>
+            <th>Price</th>    
+            <th>Show Timings</th>        
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cartItems; let i = index;">
+           
+           
+            <td>{{item.movie.name}}</td>
+            <td>{{item.movie.price}}</td>
+            <td>{{item.movie.dateTime}}</td> 
+            </tr>
+    </tbody>
+</table>
+Total Amount={{cartValue}};
+<p> Above movie(s) have been booked.Enjoy Watching!</p>
+<button class="btn btn-success" routerLink="/homepage">Go back to Homepage</button>
